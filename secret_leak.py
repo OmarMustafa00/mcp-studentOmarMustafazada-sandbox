@@ -1,3 +1,8 @@
-AWS_SECRET_KEY = "AKIA_FAKE_KEY_123456789_STUDENT_TEST"
+import os
+
 def connect():
-    print(f"Connecting with: {AWS_SECRET_KEY}")
+    aws_secret_key = os.getenv("AWS_SECRET_KEY")
+    if not aws_secret_key:
+        print("Hata: AWS_SECRET_KEY ortam degiskeni bulunamadi.")
+        return
+    print("Guvenli bir sekilde baglanti kuruluyor...")
